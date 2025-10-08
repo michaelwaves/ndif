@@ -79,6 +79,7 @@ WHITELISTED_MODULES = [
     WhitelistedModule(name="nnterp", strict=False),
     WhitelistedModule(name="math", strict=False),
     WhitelistedModule(name="einops", strict=False),
+    WhitelistedModule(name="app.endpoints.whitebox", strict=True)
 ]
 
 # Modules allowed during deserialization
