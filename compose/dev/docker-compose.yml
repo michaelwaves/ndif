@@ -30,7 +30,8 @@ services:
         reservations:
           devices:
             - driver: nvidia
-              count: ${N_DEVICES}
+              # count: ${N_DEVICES}
+              device_ids: ["4","5","6","7"]
               capabilities: [ gpu ]
     environment:
       - LOKI_URL=http://${HOST_IP}:${DEV_LOKI_PORT}/loki/api/v1/push
@@ -40,6 +41,7 @@ services:
       - INFLUXDB_ADMIN_TOKEN=${SECRET_INFLUXDB_ADMIN_TOKEN}
       - INFLUXDB_ORG=${INFLUXDB_ORG}
       - INFLUXDB_BUCKET=${INFLUXDB_BUCKET}
+      - HF_TOKEN=YOUR_TOKEN
 
       - SCHEDULING_GOOGLE_CALENDAR_ID=a7cbc58fdb0ddd93a260cd35f34492e8a38c360c44b72c8539e43aa99aeca436@group.calendar.google.com
       - SCHEDULING_GOOGLE_CREDS_PATH=/src/ray/deployments/controller/gcal/creds.json
