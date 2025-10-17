@@ -8,7 +8,7 @@ dependencies:
     - pip
     - setuptools
     # Install PyTorch with CUDA support first (for nnsight compatibility)
-    - torch --index-url https://download.pytorch.org/whl/cu121
+    - torch --index-url https://download.pytorch.org/whl/cu128
     # API
     - fastapi-cache2
     - fastapi==0.108.0
